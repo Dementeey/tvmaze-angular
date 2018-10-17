@@ -1,0 +1,45 @@
+<div class="aside" *ngIf="showFiller">
+  <div class="user">
+    <img class="user__img" mat-card-avatar src='../../../assets/man.svg'>
+    <p class="user__username" >user name</p>
+  </div>
+
+  <mat-nav-list>
+    <mat-list-item
+      *ngFor="let link of links"
+      routerLinkActive="aside__link--active"
+      [routerLinkActiveOptions]="{exact:true}"
+
+    >
+      <a
+        matLine
+        class="aside__link"
+        routerLinkActive="aside__link--active"
+        routerLink="{{link.link}}"
+        [routerLinkActiveOptions]="{exact:true}"
+      >
+        {{ link.title }}
+      </a>
+    </mat-list-item>
+  </mat-nav-list>
+
+  <button (click)="logout()"
+    color="primary"
+    class="aside__logout"
+    mat-raised-button
+    matTooltip="Info about the action"
+  >
+    <mat-icon>input</mat-icon>
+  </button>
+</div>
+
+  <button
+    color="primary"
+    class="aside__btn"
+    [class.aside__btn--active]="!showFiller"
+    (click)="showFiller = !showFiller"
+    mat-icon-button
+  >
+    <mat-icon *ngIf="showFiller">close</mat-icon>
+    <mat-icon *ngIf="!showFiller">menu</mat-icon>
+  </button>
