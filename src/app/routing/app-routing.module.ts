@@ -8,19 +8,25 @@ import {
   RegistrationPageComponent,
   UserProfilePageComponent
 } from '../pages';
+import {LockAppGuard} from '../guards/lock-app.guard';
+import {LockAuthGuard} from '../guards/lock-auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
-  { path: 'login', component: LoginPageComponent },
-  { path: 'registration', component: RegistrationPageComponent },
-  { path: 'profile', component: UserProfilePageComponent },
-  { path: 'details/:id', component: DetailsPageComponent },
+  { path: '', component: HomeComponent, canActivate: [LockAppGuard] },
+  { path: 'login', component: LoginPageComponent, canActivate: [LockAuthGuard]},
+  { path: 'registration', component: RegistrationPageComponent, canActivate: [LockAuthGuard]},
+  { path: 'profile', component: UserProfilePageComponent, canActivate: [LockAppGuard] },
+  { path: 'details/:id', component: DetailsPageComponent, canActivate: [LockAppGuard] },
   { path: 'details', redirectTo: '', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 
 
 @NgModule({
+  providers: [
+    LockAppGuard,
+    LockAuthGuard,
+    ],
   imports: [ RouterModule.forRoot(routes)],
   exports: [ RouterModule ]
 })

@@ -13,7 +13,7 @@ import {
   LoginComponent,
   TableRowComponent,
   DetailsComponent,
-  UserProfileComponent
+  UserProfileComponent,
 } from './components/';
 
 import {
@@ -25,8 +25,7 @@ import {
   PageNotFoundComponent
 } from './pages';
 import {AppRoutingModule} from './routing/app-routing.module';
-
-
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,13 +44,14 @@ import {AppRoutingModule} from './routing/app-routing.module';
     HomeComponent,
     UserProfileComponent,
     UserProfilePageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MyOwnCustomMaterialModule,
     AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
