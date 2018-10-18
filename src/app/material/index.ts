@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {
   MatButtonModule,
   MatCardModule,
-  MatCheckboxModule,
+  MatCheckboxModule, MatFormFieldModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
@@ -16,6 +16,7 @@ import {
     MatListModule,
     MatCardModule,
     MatInputModule,
+    MatFormFieldModule,
   ],
   exports: [
     MatButtonModule,
@@ -24,6 +25,7 @@ import {
     MatListModule,
     MatCardModule,
     MatInputModule,
+    MatFormFieldModule,
   ],
 })
 export class MyOwnCustomMaterialModule { }

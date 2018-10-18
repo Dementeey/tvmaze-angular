@@ -11,9 +11,10 @@ export class LockAuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (!!+localStorage.getItem('login')) {
-      return false;
+    if (+localStorage.getItem('login') === 0) {
+      return true;
     }
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
+    return true;
   }
 }

@@ -10,10 +10,11 @@ export class LockAppGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (!!+localStorage.getItem('login')) {
+    if (+localStorage.getItem('login') === 1) {
       return true;
     }
     this.router.navigate(['/login']);
+    return true;
   }
 }
 

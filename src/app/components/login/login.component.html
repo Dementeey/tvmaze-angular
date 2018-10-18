@@ -1,8 +1,15 @@
-<mat-card>
-  <h1>Login</h1>
-  <form
-    class="example-form"
-  >
-
+<mat-card class="wrap-login">
+  <h1 mat-card-title>Login</h1>
+  <form class="login" [formGroup]="authForm">
+    <mat-form-field>
+      <input matInput placeholder="Username" formControlName="login">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password" formControlName="password">
+    </mat-form-field>
+    <div class="wrap-btn">
+      <a mat-button routerLink="/registration">Sign up</a>
+      <button type="submit" (click)="submit()" mat-stroked-button>Sign in</button>
+    </div>
   </form>
 </mat-card>

@@ -1,0 +1,24 @@
+.wrap-login {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 400px;
+  margin: 50px auto;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  //height: 60%;
+  justify-content: center;
+}
+
+.wrap-btn {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  justify-self: flex-end;
+  width: 190px;
+}
