@@ -3,10 +3,15 @@
   <form class="login" [formGroup]="authForm">
     <mat-form-field>
       <input matInput placeholder="Username" formControlName="login">
+      <mat-error *ngIf="authForm.controls['login'].errors?.required">This is a required field</mat-error>
     </mat-form-field>
+
     <mat-form-field>
       <input type="password" matInput placeholder="Password" formControlName="password">
+      <mat-error *ngIf="authForm.controls['password'].errors?.required">This is a required field</mat-error>
+      <mat-error *ngIf="authForm.controls['password'].errors?.customError">Wrong password</mat-error>
     </mat-form-field>
+
     <div class="wrap-btn">
       <a mat-button routerLink="/registration">Sign up</a>
       <button type="submit" (click)="submit()" mat-stroked-button>Sign in</button>

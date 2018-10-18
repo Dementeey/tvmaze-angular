@@ -1,0 +1,57 @@
+.wrap-registration {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 500px;
+  min-height: 400px;
+  margin: 50px auto;
+}
+
+.registration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.wrap-input {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.input-left {
+  width: 48%;
+
+}
+
+.input-right {
+  width: 48%;
+
+}
+
+.mat-form-field-infix,
+.mat-form-field-wrapper,
+.mat-form-field {
+  width: 100%;
+
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 16px;
+  .radio {
+    margin-right: 15px;
+  }
+}
+
+
+.wrap-btn {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  justify-self: center;
+  align-self: center;
+  width: 190px;
+}

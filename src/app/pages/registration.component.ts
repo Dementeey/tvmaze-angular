@@ -11,8 +11,9 @@ import { Component, OnInit } from '@angular/core';
       right: 0;
       top: 0;
       bottom: 0;
-      z-index: 100000;
+      z-index: 999;
       background-color: #0d1933;
+      overflow: auto;
     }`
   ]
 })

@@ -1,3 +1,82 @@
-<p>
-  registration-form works!
-</p>
+<mat-card class="wrap-registration">
+  <h1 mat-card-title>Registration</h1>
+  <form class="registration" [formGroup]="registrationForm" (ngSubmit)="submit()">
+    <div class="wrap-input">
+      <div class="input-left">
+        <mat-form-field>
+          <input name="name" matInput placeholder="First Name" formControlName="firstName">
+          <mat-error *ngIf="registrationForm.controls['firstName'].errors?.required">This is a required field</mat-error>
+          <mat-error *ngIf="registrationForm.controls['firstName'].errors?.minlength">Not enough characters min 3</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input name="surname" matInput placeholder="Last Name" formControlName="lastName">
+          <mat-error *ngIf="registrationForm.controls['lastName'].errors?.required">This is a required field</mat-error>
+          <mat-error *ngIf="registrationForm.controls['lastName'].errors?.minlength">Not enough characters min 3</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input name="username" matInput placeholder="Username" formControlName="userName">
+          <mat-error *ngIf="registrationForm.controls['userName'].errors?.required">This is a required field</mat-error>
+          <mat-error *ngIf="registrationForm.controls['userName'].errors?.minlength">Not enough characters min 3</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input type="email" matInput placeholder="E-mail" formControlName="email">
+          <mat-error *ngIf="registrationForm.controls['email'].errors?.required">This is a required field</mat-error>
+          <mat-error *ngIf="registrationForm.controls['email'].errors?.email">Invalid Email</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input type="password" matInput placeholder="Password" formControlName="password">
+          <mat-error *ngIf="registrationForm.controls['password'].errors?.required">This is a required field</mat-error>
+          <mat-error *ngIf="registrationForm.controls['password'].errors?.pattern">There must be at least 6 character: 1 uppercase 1 lowercase 1 digital</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="input-right">
+        <mat-form-field>
+          <input type="text" name="phone" matInput placeholder="+38-XXX-XXX-XX-XX" formControlName="phone">
+          <mat-error *ngIf="registrationForm.controls['phone'].errors?.required">This is a required field</mat-error>
+          <mat-error *ngIf="registrationForm.controls['phone'].errors?.pattern">Does not match the pattern</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            name="birthday"
+            matInput
+            [matDatepicker]="pickere"
+            placeholder="Choose a date birthday mm/dd/yyyy"
+            formControlName="birthday">
+          <mat-datepicker-toggle matSuffix [for]="pickere"></mat-datepicker-toggle>
+          <mat-datepicker  #pickere ></mat-datepicker>
+          <mat-error *ngIf="registrationForm.controls['birthday'].errors?.required">This is a required field</mat-error>
+        </mat-form-field>
+
+        <label>
+          Gender:
+          <mat-radio-group formControlName="gender" class="radio-group">
+            <mat-radio-button class="radio" value="male">Male</mat-radio-button>
+            <mat-radio-button class="radio" value="Female">Female</mat-radio-button>
+          </mat-radio-group>
+        </label>
+
+
+         <mat-form-field>
+          <mat-select formControlName="selectForm" placeholder="Family status">
+            <mat-option *ngFor="let status of familyStatus" [value]="status.value">
+              {{status.viewValue}}
+            </mat-option>
+          </mat-select>
+           <mat-error *ngIf="registrationForm.controls['selectForm'].errors?.required">This is a required field</mat-error>
+         </mat-form-field>
+
+      </div>
+    </div>
+
+    <div class="wrap-btn">
+      <a mat-button routerLink="/login">Sign in</a>
+      <button type="submit" mat-stroked-button>Sign up</button>
+    </div>
+  </form>
+</mat-card>
