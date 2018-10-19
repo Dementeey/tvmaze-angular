@@ -1,5 +1,8 @@
 .aside {
-  position: relative;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  left: 0;
   width: 30vw;
   min-height: 100vh;
   border-right: 1px solid rgba(0,0,0, .1);
@@ -39,7 +42,7 @@
 
 
   &__btn {
-    position: absolute;
+    position: fixed;
     top: 4px;
     left: 30vw;
 

@@ -11,6 +11,9 @@ import {
   MatNativeDateModule,
   MatRadioModule,
   MatSelectModule,
+  MatSortModule,
+  MatTableModule,
+
 } from '@angular/material';
 
 @NgModule({
@@ -26,6 +29,8 @@ import {
     MatNativeDateModule,
     MatRadioModule,
     MatSelectModule,
+    MatSortModule,
+    MatTableModule,
   ],
   exports: [
     MatButtonModule,
@@ -39,6 +44,8 @@ import {
     MatNativeDateModule,
     MatRadioModule,
     MatSelectModule,
+    MatSortModule,
+    MatTableModule,
   ],
 })
 export class MyOwnCustomMaterialModule { }

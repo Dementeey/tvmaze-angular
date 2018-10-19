@@ -17,21 +17,3 @@ export class LockAppGuard implements CanActivate {
     return true;
   }
 }
-
-
-// let {userName, password}: AuthData  = JSON.parse(localStorage.getItem('user'));
-
-// this.router.navigate(['/login']);
-// constructor(private router: Router) {}
-
-// {
-// "firstName":"Антон",
-// "lastName":"Лойко",
-// "email":"metallist9656@gmail.com",
-// "userName":"Dementeey",
-// "password":"12Qews1",
-// "birthday":"10/13/1999",
-// "phone":"+38-097-537-08-98",
-// "radioMale":true,
-// "radioFemale":true,
-// "select":""}

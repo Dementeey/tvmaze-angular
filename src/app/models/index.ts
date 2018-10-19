@@ -19,3 +19,21 @@ export interface FamilyStatus {
   value: string;
   viewValue: string;
 }
+
+export interface Data {
+  'responseData': object[];
+  'dataParsedInArr': array[];
+}
+
+export interface AppStatus {
+  'successStatus': boolean;
+  'pendingStatus': boolean;
+  'rejectStatus': boolean;
+}
+
+export interface State {
+  'data': Data;
+  'appStatus': AppStatus;
+  'userRequest': string;
+};
+

@@ -1,3 +1,20 @@
-<p>
-  table works!
-</p>
+<table (click)="onClickOnTable($event)" class="table">
+  <tbody>
+
+    <tr>
+      <th data-string='1' class='coll-sort sorted-down'>Show name</th>
+      <th>Language</th>
+      <th>Genres</th>
+      <th>Status</th>
+      <th  data-num='1' class='coll-sort sorted-down'>Rating</th>
+    </tr>
+
+    <tr *ngFor="let row of testArr; let i = index" class='table__row-data' data-id='{{testArr[i][0]}}'>
+      <ng-container *ngFor="let item of row; let j = index" >
+        <td *ngIf=" j < 5">
+          {{row[j + 1]}}
+        </td>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>

@@ -6,12 +6,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MyOwnCustomMaterialModule} from './material';
 import {
   AsideComponent,
-  ButtonComponent,
   SearchComponent,
   TableComponent,
   RegistrationFormComponent,
   LoginComponent,
-  TableRowComponent,
   DetailsComponent,
   UserProfileComponent,
 } from './components/';
@@ -31,10 +29,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   declarations: [
     AppComponent,
     AsideComponent,
-    ButtonComponent,
     SearchComponent,
     TableComponent,
-    TableRowComponent,
     RegistrationFormComponent,
     RegistrationPageComponent,
     LoginPageComponent,
